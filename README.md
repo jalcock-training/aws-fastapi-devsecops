@@ -1,8 +1,12 @@
 # AWS FastAPI DevSecOps
 
-This repository is the starting point for a full end‑to‑end **AWS DevSecOps reference implementation**, built around a small FastAPI microservice and a fully automated, security‑focused deployment pipeline.
+This repository is the starting point for a full end‑to‑end **AWS DevSecOps reference
+implementation**, built around a small FastAPI microservice and a fully automated, security‑focused
+deployment pipeline.
 
-The goal of this project is to demonstrate how a modern cloud application can be developed, secured, tested, deployed, and monitored using **AWS**, **Terraform**, **FastAPI**, and **DevSecOps best practices**.
+The goal of this project is to demonstrate how a modern cloud application can be developed, secured,
+tested, deployed, and monitored using **AWS**, **Terraform**, **FastAPI**, and **DevSecOps best
+practices**.
 
 ## What this project will showcase
 
@@ -17,13 +21,15 @@ The goal of this project is to demonstrate how a modern cloud application can be
 ## Why this exists
 
 This project serves as a practical demonstration of:
+
 - Secure cloud architecture
 - Infrastructure as Code discipline
 - DevSecOps automation
 - Application deployment pipelines
 - AWS platform engineering fundamentals
 
-It is intentionally designed to be small, clear, and technically rigorous for use as a future reference.
+It is intentionally designed to be small, clear, and technically rigorous for use as a future
+reference.
 
 ## Status
 
