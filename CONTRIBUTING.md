@@ -1,7 +1,8 @@
 # Contributing Guide
 
 Thank you for your interest in contributing to this AWS FastAPI DevSecOps reference project.  
-This repository is designed to be clear, reproducible, and technically rigorous. The guidelines below help maintain consistency and quality across code, infrastructure, and documentation.
+This repository is designed to be clear, reproducible, and technically rigorous. The guidelines
+below help maintain consistency and quality across code, infrastructure, and documentation.
 
 ---
 
@@ -27,8 +28,8 @@ Contributions should follow these principles:
 
 Before contributing:
 
-1. Read `README.md` for project context.  
-2. Follow `SETUP.md` to bootstrap your environment.  
+1. Read `README.md` for project context.
+2. Follow `SETUP.md` to bootstrap your environment.
 3. Review the ADRs in `docs/decisions/` to understand architectural decisions.
 
 If something is unclear or missing, contributions to documentation are welcome.
@@ -39,17 +40,18 @@ If something is unclear or missing, contributions to documentation are welcome.
 
 This project uses a simple Git workflow:
 
-- Create a feature branch from `main`  
-  ```
+- Create a feature branch from `main`
+
+  ```bash
   git checkout -b feature/my-change
   ```
 
-- Commit changes with clear, descriptive messages  
-- Open a Pull Request into `main` when ready for review  
+- Commit changes with clear, descriptive messages
+- Open a Pull Request into `main` when ready for review
 - Ensure your PR includes:
-  - a summary of the change  
-  - any relevant ADR updates  
-  - test results or validation steps  
+  - a summary of the change
+  - any relevant ADR updates
+  - test results or validation steps
 
 All changes must pass CI checks before merging.
 
@@ -58,22 +60,25 @@ All changes must pass CI checks before merging.
 ## 4. Code Standards
 
 ### Application code (FastAPI)
-- Follow PEP8 and standard Python formatting conventions  
-- Keep endpoints small and focused  
-- Avoid unnecessary dependencies  
-- Add type hints where practical  
+
+- Follow PEP8 and standard Python formatting conventions
+- Keep endpoints small and focused
+- Avoid unnecessary dependencies
+- Add type hints where practical
 
 ### Infrastructure (Terraform)
-- Use the existing module structure and naming conventions  
-- Keep resources minimal and explicit  
-- Avoid embedding secrets in variables or state  
-- Run `terraform fmt` before committing  
+
+- Use the existing module structure and naming conventions
+- Keep resources minimal and explicit
+- Avoid embedding secrets in variables or state
+- Run `terraform fmt` before committing
 
 ### CI/CD (GitHub Actions)
+
 - Workflows should be:
-  - minimal  
-  - deterministic  
-  - secure (OIDC only, no stored AWS keys)  
+  - minimal
+  - deterministic
+  - secure (OIDC only, no stored AWS keys)
 
 ---
 
@@ -81,11 +86,11 @@ All changes must pass CI checks before merging.
 
 All contributions must adhere to the project’s security posture:
 
-- No secrets in code, commits, or Terraform  
-- Use Parameter Store for sensitive values  
-- IAM policies must follow least‑privilege principles  
-- Container images must pass vulnerability scanning  
-- Infrastructure changes must not weaken isolation or access controls  
+- No secrets in code, commits, or Terraform
+- Use Parameter Store for sensitive values
+- IAM policies must follow least‑privilege principles
+- Container images must pass vulnerability scanning
+- Infrastructure changes must not weaken isolation or access controls
 
 If in doubt, reference ADR‑0011 (Secrets Management) and ADR‑0014 (IAM Model).
 
@@ -95,13 +100,15 @@ If in doubt, reference ADR‑0011 (Secrets Management) and ADR‑0014 (IAM Model
 
 Before submitting a PR:
 
-- Run the FastAPI app locally (optional)  
-- Validate Terraform changes  
-  ```
+- Run the FastAPI app locally (optional)
+- Validate Terraform changes
+  
+  ```bash
   terraform plan
   ```
-- Ensure CI passes locally where applicable  
-- Confirm that the environment toggle still works if infrastructure was modified  
+
+- Ensure CI passes locally where applicable
+- Confirm that the environment toggle still works if infrastructure was modified
 
 ---
 
@@ -109,9 +116,9 @@ Before submitting a PR:
 
 Changes that affect architecture, behaviour, or infrastructure should include:
 
-- Updates to relevant ADRs  
-- Updates to `SETUP.md` if setup steps change  
-- Inline comments where clarity is needed  
+- Updates to relevant ADRs
+- Updates to `SETUP.md` if setup steps change
+- Inline comments where clarity is needed
 
 ADRs should follow the existing format and be placed in `docs/decisions/`.
 
@@ -121,10 +128,10 @@ ADRs should follow the existing format and be placed in `docs/decisions/`.
 
 If your contribution introduces a new architectural decision:
 
-1. Create a new ADR file under `docs/decisions/`  
-2. Use the next sequential ADR number  
-3. Follow the established structure (Context → Decision → Rationale → Consequences → Alternatives)  
-4. Reference the ADR in your PR description  
+1. Create a new ADR file under `docs/decisions/`
+2. Use the next sequential ADR number
+3. Follow the established structure (Context → Decision → Rationale → Consequences → Alternatives)
+4. Reference the ADR in your PR description
 
 ---
 
@@ -132,9 +139,9 @@ If your contribution introduces a new architectural decision:
 
 If you’re unsure about an approach:
 
-- Open a draft PR  
-- Add comments explaining your thinking  
-- Reference relevant ADRs or propose new ones  
+- Open a draft PR
+- Add comments explaining your thinking
+- Reference relevant ADRs or propose new ones
 
 Clear communication helps maintain the project’s quality and intent.
 
@@ -146,4 +153,5 @@ By contributing, you agree that your contributions will be licensed under the re
 
 ---
 
-Thank you for helping improve this project. Thoughtful contributions make this a stronger, more useful reference for everyone.
+Thank you for helping improve this project. Thoughtful contributions make this a stronger, more
+useful reference for everyone.

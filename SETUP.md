@@ -1,6 +1,8 @@
 # Setup Guide
 
-This document explains how to bootstrap, deploy, and manage the development environment for the FastAPI ECS Fargate platform. The environment is intentionally lightweight, cost‑controlled, and fully reproducible using Terraform.
+This document explains how to bootstrap, deploy, and manage the development environment for the
+FastAPI ECS Fargate platform. The environment is intentionally lightweight, cost‑controlled, and
+fully reproducible using Terraform.
 
 ---
 
@@ -8,13 +10,14 @@ This document explains how to bootstrap, deploy, and manage the development envi
 
 Install the following tools locally:
 
-- AWS CLI v2  
-- Terraform (latest stable version)  
-- Python 3.11+ (optional for local app testing)  
-- Docker (for building images locally)  
+- AWS CLI v2
+- Terraform (latest stable version)
+- Python 3.11+ (optional for local app testing)
+- Docker (for building images locally)
 - Git
 
-Ensure your AWS CLI is configured with credentials that have permission to create infrastructure in your AWS account.
+Ensure your AWS CLI is configured with credentials that have permission to create infrastructure in
+your AWS account.
 
 ---
 
@@ -22,10 +25,10 @@ Ensure your AWS CLI is configured with credentials that have permission to creat
 
 Key directories:
 
-- `infra/` — Terraform configuration for VPC, ECS, ALB, IAM, and supporting services  
-- `app/` — FastAPI application code  
-- `ci/` — GitHub Actions workflows  
-- `docs/` — ADRs and architectural documentation  
+- `infra/` — Terraform configuration for VPC, ECS, ALB, IAM, and supporting services
+- `app/` — FastAPI application code
+- `ci/` — GitHub Actions workflows
+- `docs/` — ADRs and architectural documentation
 
 Refer to ADR‑0001 for full details.
 
@@ -35,8 +38,8 @@ Refer to ADR‑0001 for full details.
 
 Before running Terraform for the first time:
 
-1. Create an S3 bucket for Terraform state.  
-2. Create a DynamoDB table for state locking.  
+1. Create an S3 bucket for Terraform state.
+2. Create a DynamoDB table for state locking.
 3. Update the backend configuration in `infra/backend.tf` with your bucket and table names.
 
 These resources are created once per account.
@@ -47,18 +50,21 @@ These resources are created once per account.
 
 From the `infra/` directory:
 
-1. Initialize Terraform  
-   ```
+1. Initialize Terraform
+
+   ```bash
    terraform init
    ```
 
-2. Review the plan  
-   ```
+2. Review the plan
+
+   ```bash
    terraform plan
    ```
 
-3. Apply the infrastructure  
-   ```
+3. Apply the infrastructure
+
+   ```bash
    terraform apply
    ```
 
@@ -72,8 +78,8 @@ Secrets are stored in AWS Systems Manager Parameter Store as SecureString parame
 
 You must manually create:
 
-- Application secret key  
-- Any additional secrets required by the FastAPI service  
+- Application secret key
+- Any additional secrets required by the FastAPI service
 
 Refer to ADR‑0011 for the secrets management strategy.
 
@@ -82,16 +88,18 @@ Refer to ADR‑0011 for the secrets management strategy.
 ## 6. Building and Deploying the Application
 
 ### Local build (optional)
-```
+
+```bash
 docker build -t fastapi-app .
 ```
 
 ### CI/CD deployment
+
 Push to the `main` branch to trigger GitHub Actions:
 
-- Builds and pushes the container image to ECR  
-- Updates the ECS task definition  
-- Performs a rolling deployment  
+- Builds and pushes the container image to ECR
+- Updates the ECS task definition
+- Performs a rolling deployment
 
 GitHub Actions authenticates using OIDC; no long‑lived AWS credentials are stored.
 
@@ -99,15 +107,18 @@ GitHub Actions authenticates using OIDC; no long‑lived AWS credentials are sto
 
 ## 7. Environment Toggle (Cost Control)
 
-The environment supports a toggle mode that disables NAT Gateway, ALB, and ECS compute when not in use.
+The environment supports a toggle mode that disables NAT Gateway, ALB, and ECS compute when not in
+use.
 
 To enable the environment for testing:
-```
+
+```bash
 terraform apply -var="enable_compute=true"
 ```
 
 To shut down expensive components:
-```
+
+```bash
 terraform apply -var="enable_compute=false"
 ```
 
@@ -120,7 +131,7 @@ See ADR‑0008 for full details.
 
 From the `app/` directory:
 
-```
+```bash
 uvicorn main:app --reload
 ```
 
@@ -132,7 +143,7 @@ This runs the FastAPI service on `http://localhost:8000`.
 
 To remove all infrastructure (except the state bucket and DynamoDB table):
 
-```
+```bash
 terraform destroy
 ```
 
@@ -157,15 +168,16 @@ Use this only when you no longer need the environment.
 
 All architectural decisions are documented in `docs/decisions/` using ADRs:
 
-- Networking  
-- IAM  
-- Secrets  
-- Cost control  
-- Deployment strategy  
-- Logging and observability  
+- Networking
+- IAM
+- Secrets
+- Cost control
+- Deployment strategy
+- Logging and observability
 
 Refer to ADR‑0001 through ADR‑0014 for full context.
 
 ---
 
-This setup guide provides everything needed to bootstrap, deploy, and manage the environment in a clean, reproducible way.
+This setup guide provides everything needed to bootstrap, deploy, and manage the environment in a
+clean, reproducible way.
