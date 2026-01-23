@@ -143,14 +143,14 @@ This keeps deployments predictable and safe.
 
 ## Consequences
 
-### Positive
+### Benefits — ADR‑0003
 
 - Clean, maintainable structure
 - Predictable CI/CD workflows
 - Safe state isolation
 - Easy onboarding for new contributors
 
-### Negative
+### Trade‑offs — ADR‑0003
 
 - Slightly more boilerplate than a monolithic root
 - Requires discipline to keep modules focused

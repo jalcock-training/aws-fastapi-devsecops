@@ -119,7 +119,7 @@ Rejected because:
 
 ## Consequences
 
-### Positive
+### Benefits — ADR‑0004
 
 - Minimal operational overhead
 - Strong security posture
@@ -127,7 +127,7 @@ Rejected because:
 - Clean integration with Terraform and CI/CD
 - Industry‑standard architecture for containerised workloads
 
-### Negative
+### Trade‑offs — ADR‑0004
 
 - Slightly higher per‑unit cost than EC2 for sustained high‑load workloads
 - Less flexibility than Kubernetes for complex multi‑service systems

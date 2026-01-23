@@ -66,14 +66,14 @@ All future operational access will be granted through SSO permission sets rather
 
 ## Consequences
 
-### Positive
+### Benefits — ADR‑0001
 
 - Strong security posture from day one
 - No IAM users or long‑lived credentials in the account
 - Clean, modern authentication workflow for Terraform and CLI
 - Easy to scale to multiple permission sets and roles
 
-### Negative
+### Trade‑offs — ADR‑0001
 
 - Requires periodic `aws sso login` for Terraform and CLI usage
 - External IdP integration would require a future ADR if needed

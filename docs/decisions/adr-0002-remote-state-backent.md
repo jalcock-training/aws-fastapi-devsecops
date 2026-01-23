@@ -79,14 +79,14 @@ apply.
 
 ## Consequences
 
-### Positive
+### Benefits — ADR‑0002
 
 - Safe, shared state for both local and CI/CD workflows
 - Strong locking guarantees
 - Minimal operational overhead
 - Fully AWS‑native solution
 
-### Negative
+### Trade‑offs — ADR‑0002
 
 - Initial backend resources must be created manually or via a bootstrap script
 - Slightly more setup complexity compared to local state
