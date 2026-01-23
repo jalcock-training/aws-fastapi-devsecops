@@ -17,8 +17,8 @@
 - [x] GitHub repository created (`aws-fastapi-devsecops`)
 - [x] Initial README added
 - [x] Documentation structure created (`docs/`)
-- [ ] Setup documentation drafted
-- [ ] Architecture section scaffolded
+- [x] Setup documentation drafted
+- [x] Architecture section scaffolded
 - [x] ADR (Architecture Decision Record) directory created
 - [x] Project planning directory created
 
