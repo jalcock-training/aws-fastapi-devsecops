@@ -1,7 +1,7 @@
 # Description
 
-Provide a clear and concise description of the change.
-Explain the purpose of the PR and the problem it solves.
+Provide a clear and concise description of the change. Explain the purpose of the PR and the problem
+it solves.
 
 ---
 

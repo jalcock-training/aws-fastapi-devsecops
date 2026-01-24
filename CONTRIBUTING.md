@@ -102,7 +102,7 @@ Before submitting a PR:
 
 - Run the FastAPI app locally (optional)
 - Validate Terraform changes
-  
+
   ```bash
   terraform plan
   ```
