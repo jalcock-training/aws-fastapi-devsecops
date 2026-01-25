@@ -19,21 +19,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install terraform-docs
-        run: |
-          curl -sSfL https://raw.githubusercontent.com/terraform-docs/terraform-docs/main/install.sh | \
-            sh -s -- -b /usr/local/bin
-
-      - name: Generate Terraform docs
-        working-directory: terraform/
-        run: terraform-docs markdown table . > README.md
-
-      - name: Commit updated docs
-        if: github.event_name == 'pull_request'
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          if ! git diff --quiet; then
-            git add README.md
-            git commit -m "Update Terraform docs"
-          fi
+      - name: Render terraform docs and push changes back to PR
+        uses: terraform-docs/gh-actions@v1.4.1
+        with:
+          working-dir: terraform
+          output-file: README.md
+          output-method: inject
+          git-push: "true"
