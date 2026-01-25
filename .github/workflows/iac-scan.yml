@@ -3,7 +3,7 @@ name: IaC Scan
 on:
   pull_request:
     paths:
-      - "infra/**"
+      - "terraform/**"
       - ".github/workflows/iac-scan.yml"
   push:
     branches:
@@ -26,4 +26,4 @@ jobs:
         run: pip install checkov
 
       - name: Run Checkov IaC scan
-        run: checkov -d infra/ --quiet --compact
+        run: checkov -d terraform/ --quiet --compact

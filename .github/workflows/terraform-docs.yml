@@ -3,13 +3,13 @@ name: Terraform Docs
 on:
   pull_request:
     paths:
-      - "infra/**"
+      - "terraform/**"
       - ".github/workflows/terraform-docs.yml"
   push:
     branches:
       - main
     paths:
-      - "infra/**"
+      - "terraform/**"
 
 jobs:
   terraform-docs:
@@ -21,11 +21,11 @@ jobs:
 
       - name: Install terraform-docs
         run: |
-          curl -sSL https://github.com/terraform-docs/terraform-docs/releases/latest/download/terraform-docs-$(uname)-amd64.tar.gz \
-            | sudo tar -xz -C /usr/local/bin
+          curl -sSfL https://raw.githubusercontent.com/terraform-docs/terraform-docs/main/install.sh | \
+            sh -s -- -b /usr/local/bin
 
       - name: Generate Terraform docs
-        working-directory: infra/
+        working-directory: terraform/
         run: terraform-docs markdown table . > README.md
 
       - name: Commit updated docs
