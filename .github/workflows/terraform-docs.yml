@@ -1,0 +1,39 @@
+name: Terraform Docs
+
+on:
+  pull_request:
+    paths:
+      - "infra/**"
+      - ".github/workflows/terraform-docs.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "infra/**"
+
+jobs:
+  terraform-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install terraform-docs
+        run: |
+          curl -sSL https://github.com/terraform-docs/terraform-docs/releases/latest/download/terraform-docs-$(uname)-amd64.tar.gz \
+            | sudo tar -xz -C /usr/local/bin
+
+      - name: Generate Terraform docs
+        working-directory: infra/
+        run: terraform-docs markdown table . > README.md
+
+      - name: Commit updated docs
+        if: github.event_name == 'pull_request'
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          if ! git diff --quiet; then
+            git add README.md
+            git commit -m "Update Terraform docs"
+          fi

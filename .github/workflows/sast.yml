@@ -1,0 +1,29 @@
+name: SAST
+
+on:
+  pull_request:
+    paths:
+      - "app/**/*.py"
+      - ".github/workflows/sast.yml"
+  push:
+    branches:
+      - main
+
+jobs:
+  bandit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Bandit
+        run: pip install bandit
+
+      - name: Run Bandit SAST scan
+        run: bandit -r app/ -ll
