@@ -28,13 +28,13 @@
 
 ### CI Pipeline (GitHub Actions)
 
-- [ ] CI workflow scaffolded
-- [ ] Linting stage (placeholder)
-- [ ] Unit test stage (placeholder)
-- [ ] Python dependency scanning (pip-audit)
+- [x] CI workflow scaffolded
+- [x] Linting stage (placeholder)
+- [x] Unit test stage (placeholder)
+- [x] Python dependency scanning (pip-audit)
 - [ ] SAST scanning (Bandit)
 - [ ] Container scanning (Trivy)
-- [ ] IaC scanning (Checkov or tfsec)
+- [ ] IaC scanning (Checkov)
 
 ### Build & Deploy Pipeline
 
@@ -44,15 +44,26 @@
 
 ---
 
-## 4. Terraform Infrastructure Foundation
+## 4. Integrate App Into Pipeline
 
-### 4.1 Core Terraform Setup
+- [ ] CI pipeline updated to run real tests
+- [ ] Security scanning runs on real code
+- [ ] Docker image built from FastAPI app
+- [ ] Image pushed to ECR
+- [ ] ECS service updated to use real image
+- [ ] Deployment workflow finalised
+
+---
+
+## 5. Terraform Infrastructure Foundation
+
+### 5.1 Core Terraform Setup
 
 - [ ] Root module scaffolded
 - [ ] Providers and versions pinned
 - [ ] Remote state backend (S3 + DynamoDB)
 
-### 4.2 Billing Alerts & Cost Controls
+### 5.2 Billing Alerts & Cost Controls
 
 - [ ] CloudWatch billing alarm created (Terraform)
 - [ ] SNS topic + email subscription for alerts
@@ -60,14 +71,14 @@
 - [ ] Cost Anomaly Detection monitor created (Terraform)
 - [ ] Cost Anomaly Detection subscription created (Terraform)
 
-### 4.3 Networking
+### 5.3 Networking
 
 - [ ] VPC created
 - [ ] Public/private subnets
 - [ ] NAT gateway (optional)
 - [ ] Security groups defined
 
-### 4.4 Compute & Deployment
+### 5.4 Compute & Deployment
 
 - [ ] ECS cluster created
 - [ ] Task execution role created
@@ -75,7 +86,7 @@
 - [ ] ALB configured
 - [ ] ECS service scaffolded (placeholder container)
 
-### 4.5 Observability & Security
+### 5.5 Observability & Security
 
 - [ ] CloudTrail enabled
 - [ ] S3 logging bucket created
@@ -86,7 +97,7 @@
 
 ---
 
-## 5. FastAPI Application (Onboard Into Existing Platform)
+## 6. FastAPI Application (Onboard Into Existing Platform)
 
 - [ ] Project scaffold created (`app/`)
 - [ ] Basic FastAPI service implemented
@@ -96,17 +107,6 @@
 - [ ] Unit tests added
 - [ ] Requirements file created
 - [ ] Dockerfile created and tested locally
-
----
-
-## 6. Integrate App Into Pipeline
-
-- [ ] CI pipeline updated to run real tests
-- [ ] Security scanning runs on real code
-- [ ] Docker image built from FastAPI app
-- [ ] Image pushed to ECR
-- [ ] ECS service updated to use real image
-- [ ] Deployment workflow finalised
 
 ---
 
