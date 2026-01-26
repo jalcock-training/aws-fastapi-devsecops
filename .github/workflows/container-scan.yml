@@ -32,4 +32,4 @@ jobs:
 
       - name: Scan Docker image with Trivy
         run: |
-          trivy image --exit-code 1 --severity HIGH,CRITICAL app-image:latest
+          trivy image --ignorefile .trivyignore --exit-code 1 --severity HIGH,CRITICAL app-image:latest
