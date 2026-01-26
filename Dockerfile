@@ -9,7 +9,7 @@ RUN pip wheel --no-cache-dir --wheel-dir wheels/ -r requirements.txt
 FROM cgr.dev/chainguard/python:latest
 
 WORKDIR /app
-COPY --from=builder /wheels /wheels
+COPY --from=builder wheels wheels
 RUN pip install --no-cache-dir --no-index --find-links=wheels wheels/*
 
 COPY app/ .
