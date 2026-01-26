@@ -3,7 +3,7 @@ FROM cgr.dev/chainguard/python:latest-dev AS builder
 
 WORKDIR /app
 COPY app/requirements.txt .
-RUN pip wheel --no-cache-dir --wheel-dir /wheels -r requirements.txt
+RUN pip wheel --no-cache-dir --wheel-dir wheels/ -r requirements.txt
 
 # Stage 2: minimal runtime
 FROM cgr.dev/chainguard/python:latest
