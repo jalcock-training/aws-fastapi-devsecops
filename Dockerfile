@@ -10,7 +10,7 @@ FROM cgr.dev/chainguard/python:latest
 
 WORKDIR /app
 COPY --from=builder /wheels /wheels
-RUN pip install --no-cache-dir --no-index --find-links=/wheels /wheels/*
+RUN pip install --no-cache-dir --no-index --find-links=wheels wheels/*
 
 COPY app/ .
 
