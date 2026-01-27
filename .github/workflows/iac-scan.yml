@@ -1,0 +1,29 @@
+name: IaC Scan
+
+on:
+  pull_request:
+    paths:
+      - "terraform/**"
+      - ".github/workflows/iac-scan.yml"
+  push:
+    branches:
+      - main
+
+jobs:
+  checkov:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+
+      - name: Install Checkov
+        run: pip install checkov
+
+      - name: Run Checkov IaC scan
+        run: checkov -d terraform/ --quiet --compact

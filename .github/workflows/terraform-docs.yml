@@ -1,0 +1,32 @@
+name: Terraform Docs
+
+on:
+  pull_request:
+    paths:
+      - "terraform/**"
+      - ".github/workflows/terraform-docs.yml"
+
+  push:
+    branches:
+      - main
+    paths:
+      - "terraform/**"
+
+jobs:
+  terraform-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Generate docs but only push when running on main
+      - name: Render terraform docs
+        uses: terraform-docs/gh-actions@v1.4.1
+        with:
+          working-dir: terraform
+          output-file: README.md
+          output-method: inject
+          output-format: markdown table
+          git-push: ${{ github.event_name == 'push' }}
+          git-commit-message: "terraform-docs: automated update"

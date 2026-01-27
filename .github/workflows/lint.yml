@@ -1,0 +1,50 @@
+name: Lint
+
+on:
+  pull_request:
+    paths:
+      - "**/*.py"
+      - "**/*.md"
+      - ".github/workflows/lint.yml"
+  push:
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+
+      - name: Install Python linting tools
+        run: |
+          pip install ruff black
+
+      - name: Run Ruff linting
+        run: ruff check .
+
+      - name: Run Black formatting check
+        run: black --check .
+
+      # Optional: Markdown + Prettier linting
+      - name: Set up Node for markdown linting
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install markdownlint and prettier
+        run: |
+          npm install -g markdownlint-cli prettier
+
+      - name: Run markdownlint
+        run: markdownlint "**/*.md"
+
+      - name: Run Prettier formatting check
+        run: prettier --check "**/*.{md,yml,yaml,json}"

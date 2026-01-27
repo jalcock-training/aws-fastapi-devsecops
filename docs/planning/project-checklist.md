@@ -32,13 +32,13 @@
 - [x] Linting stage (placeholder)
 - [x] Unit test stage (placeholder)
 - [x] Python dependency scanning (pip-audit)
-- [ ] SAST scanning (Bandit)
-- [ ] Container scanning (Trivy)
-- [ ] IaC scanning (Checkov)
+- [x] SAST scanning (Bandit)
+- [x] Container scanning (Trivy)
+- [x] IaC scanning (Checkov)
 
 ### Build & Deploy Pipeline
 
-- [ ] Docker build workflow (placeholder image)
+- [x] Docker build workflow (placeholder image)
 - [ ] Push to ECR (placeholder)
 - [ ] Terraform plan/apply workflow scaffolded
 
