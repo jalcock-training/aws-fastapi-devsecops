@@ -1,3 +1,123 @@
+# ============================================
+# Global ignores for aws-fastapi-devsecops
+# ============================================
+
+# -------------------------
+# Python
+# -------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.pkl
+*.egg-info/
+*.egg
+*.log
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python tooling
+.mypy_cache/
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Ruff / Black / linting
+.ruff_cache/
+
+# -------------------------
+# FastAPI / App
+# -------------------------
+*.db
+*.sqlite
+instance/
+.env
+.env.*
+
+# -------------------------
+# Docker
+# -------------------------
+docker-compose.override.yml
+docker-compose.local.yml
+.dockerignore-local
+
+# -------------------------
+# Terraform
+# -------------------------
+**/.terraform/
+**/.terraform.lock.hcl.backup
+crash.log
+crash.*.log
+
+# Ignore tfvars unless intentionally committed
+*.tfvars
+*.tfvars.json
+
+# Local override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# -------------------------
+# Node / JavaScript tooling
+# -------------------------
 node_modules/
-package.json
-package-lock.json
+
+# -------------------------
+# GitHub Actions
+# -------------------------
+# (No workflow files ignored — but local artifacts might be)
+actions-runner/
+.github/actions/tmp/
+
+# -------------------------
+# Editor / IDE
+# -------------------------
+
+# VS Code
+.vscode/
+.vscode-test/
+
+# PyCharm / JetBrains
+.idea/
+*.iml
+
+# -------------------------
+# OS / Filesystem
+# -------------------------
+.DS_Store
+Thumbs.db
+
+# -------------------------
+# Local Dev Tools
+# -------------------------
+# Pre-commit / hooks
+.pre-commit-config.yaml~
+.git/hooks/*~
+.git/hooks/*.swp
+
+# Task runners / build artifacts
+dist/
+build/
+*.tmp
+
+# -------------------------
+# Logs
+# -------------------------
+logs/
+*.log
+*.out
+*.err
+
+# -------------------------
+# Misc
+# -------------------------
+*.bak
+*.old
+*.retry
