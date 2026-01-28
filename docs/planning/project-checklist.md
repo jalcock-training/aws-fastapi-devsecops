@@ -19,39 +19,51 @@
 - [x] Documentation structure created (`docs/`)
 - [x] Setup documentation drafted
 - [x] Architecture section scaffolded
-- [x] ADR (Architecture Decision Record) directory created
+- [x] ADR directory created
 - [x] Project planning directory created
+- [ ] Runbook created (deploy, rollback, debug)
+- [ ] Cost breakdown documented (ECS, ALB, NAT, logs)
 
 ---
 
 ## 3. DevSecOps Pipeline Skeleton
 
-### CI Pipeline (GitHub Actions)
+### 3.1 CI Pipeline (GitHub Actions)
 
 - [x] CI workflow scaffolded
-- [x] Linting stage (placeholder)
+- [x] Linting (Ruff, Black, markdownlint)
 - [x] Unit test stage (placeholder)
 - [x] Python dependency scanning (pip-audit)
 - [x] SAST scanning (Bandit)
 - [x] Container scanning (Trivy)
 - [x] IaC scanning (Checkov)
+- [ ] CI caching added (pip + Docker layers)
+- [ ] Pre-commit hooks configured
+- [ ] Branch protection rules defined
+- [ ] Local Git hooks added (pre-commit, pre-push) for linting, formatting, and safety checks
 
-### Build & Deploy Pipeline
 
-- [x] Docker build workflow (placeholder image)
-- [x] Push to ECR (placeholder)
+### 3.2 Build & Deploy Pipeline
+
+- [x] Docker image built from FastAPI app
+- [x] Push to ECR (real image)
 - [x] Terraform plan/apply workflow scaffolded
+- [ ] Deployment workflow scaffolded (ECS)
 
 ---
 
 ## 4. Integrate App Into Pipeline
 
-- [ ] CI pipeline updated to run real tests
-- [ ] Security scanning runs on real code
-- [ ] Docker image built from FastAPI app
-- [x] Image pushed to ECR
-- [ ] ECS service updated to use real image
-- [ ] Deployment workflow finalised
+- [ ] FastAPI project scaffold created (`app/`)
+- [ ] Basic FastAPI service implemented
+- [ ] `/health` endpoint added
+- [ ] `/process` endpoint added
+- [ ] Logging configured
+- [ ] Unit tests added
+- [ ] Requirements file created
+- [ ] Dockerfile created and tested locally
+- [ ] Local dev environment documented
+- [ ] API contract documented (OpenAPI)
 
 ---
 
@@ -59,17 +71,19 @@
 
 ### 5.1 Core Terraform Setup
 
+- [ ] Terraform folder structure defined (`modules/`, `envs/`, `global/`)
 - [ ] Root module scaffolded
 - [ ] Providers and versions pinned
 - [ ] Remote state backend (S3 + DynamoDB)
+- [ ] Makefile or task runner for Terraform commands
 
 ### 5.2 Billing Alerts & Cost Controls
 
-- [ ] CloudWatch billing alarm created (Terraform)
-- [ ] SNS topic + email subscription for alerts
-- [ ] Cost Explorer enabled (manual one‑time step)
-- [ ] Cost Anomaly Detection monitor created (Terraform)
-- [ ] Cost Anomaly Detection subscription created (Terraform)
+- [ ] CloudWatch billing alarm (Terraform)
+- [ ] SNS topic + email subscription
+- [ ] Cost Explorer enabled (manual)
+- [ ] Cost Anomaly Detection monitor (Terraform)
+- [ ] Cost Anomaly Detection subscription (Terraform)
 
 ### 5.3 Networking
 
@@ -83,30 +97,32 @@
 - [ ] ECS cluster created
 - [ ] Task execution role created
 - [ ] Task role (least privilege)
+- [ ] ECR lifecycle policy added
+- [ ] ECS task definition templated
 - [ ] ALB configured
 - [ ] ECS service scaffolded (placeholder container)
+- [ ] Deployment circuit breakers enabled
 
 ### 5.5 Observability & Security
 
 - [ ] CloudTrail enabled
 - [ ] S3 logging bucket created
+- [ ] ALB access logs enabled
 - [ ] EventBridge alerts configured
 - [ ] SNS notifications configured
 - [ ] CloudWatch log groups created
+- [ ] ECS task logs shipped to CloudWatch
+- [ ] Basic CPU/memory alarms for ECS service
 - [ ] Metrics and dashboards added
 
 ---
 
-## 6. FastAPI Application (Onboard Into Existing Platform)
+## 6. Deployment Integration
 
-- [ ] Project scaffold created (`app/`)
-- [ ] Basic FastAPI service implemented
-- [ ] `/health` endpoint added
-- [ ] `/process` endpoint added
-- [ ] Logging configured
-- [ ] Unit tests added
-- [ ] Requirements file created
-- [ ] Dockerfile created and tested locally
+- [ ] ECS service updated to use real image
+- [ ] Deployment workflow finalised
+- [ ] Blue/green or rolling deployment strategy defined
+- [ ] Post-deployment smoke tests added
 
 ---
 
@@ -123,11 +139,9 @@
 
 ## 8. Stretch Goals (Optional)
 
-- [ ] Add staging environment
-- [ ] Add WAF in front of ALB
-- [ ] Add Secrets Manager integration
-- [ ] Add automated dependency updates (Dependabot)
-- [ ] Add load testing
-- [ ] Add performance dashboards
-
----
+- [ ] Staging environment added
+- [ ] WAF in front of ALB
+- [ ] Secrets Manager integration
+- [ ] Automated dependency updates (Dependabot)
+- [ ] Load testing added
+- [ ] Performance dashboards added
