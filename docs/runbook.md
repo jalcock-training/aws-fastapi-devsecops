@@ -1,6 +1,8 @@
 # Runbook: aws-fastapi-devsecops
 
-This runbook provides operational procedures for deploying, rolling back, and debugging the FastAPI service running on AWS ECS Fargate. It is designed for use during incidents, maintenance, and day‑to‑day operations.
+This runbook provides operational procedures for deploying, rolling back, and debugging the FastAPI
+service running on AWS ECS Fargate. It is designed for use during incidents, maintenance, and
+day‑to‑day operations.
 
 ---
 
@@ -13,7 +15,7 @@ This runbook provides operational procedures for deploying, rolling back, and de
 **Networking:** ALB → ECS Service → Task  
 **Container Registry:** Amazon ECR  
 **Logging:** CloudWatch Logs  
-**Monitoring:** CloudWatch Metrics, ALB Target Health, EventBridge Alerts  
+**Monitoring:** CloudWatch Metrics, ALB Target Health, EventBridge Alerts
 
 Core components involved during incidents:
 
@@ -68,7 +70,7 @@ Use only if GitHub Actions is unavailable.
    - Create new revision with updated image
    - Update ECS service to use new revision
    - Force new deployment
-  
+
 4. Validate health checks and logs.
 
 ---
