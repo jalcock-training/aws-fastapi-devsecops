@@ -11,18 +11,16 @@ Accepted
 ## Context
 
 The platform runs in an AWS account used for development, experimentation, and portfolio
-demonstration.  
-To avoid unnecessary spend, the environment must remain cost‑efficient, predictable, and safe from
-unexpected charges.
+demonstration. To avoid unnecessary spend, the environment must remain cost‑efficient, predictable,
+and safe from unexpected charges.
 
 Two AWS services dominate baseline cost in a VPC‑based ECS architecture:
 
 - **NAT Gateway** (~$45/month in ap-southeast-2)
 - **Application Load Balancer (ALB)** (~$22/month)
 
-These services incur hourly charges even when idle.  
-All other components (ECS tasks, ECR, S3, IAM, CloudWatch) are either free‑tier‑eligible or
-usage‑based.
+These services incur hourly charges even when idle. All other components (ECS tasks, ECR, S3, IAM,
+CloudWatch) are either free‑tier‑eligible or usage‑based.
 
 Because the environment does not need to run 24/7, the cost‑control strategy must include both
 **monitoring** and **intentional shutdown of non-essential infrastructure**.

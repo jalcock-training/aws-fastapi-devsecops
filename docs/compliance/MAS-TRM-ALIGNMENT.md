@@ -2,9 +2,8 @@
 
 This document provides a high‑level mapping of the platform’s architecture, controls, and design
 decisions to the key domains of the Monetary Authority of Singapore (MAS) Technology Risk Management
-(TRM) Guidelines.  
-It is not a certification document, but a clear demonstration of how the project aligns with
-MAS‑style expectations for secure, well‑governed cloud workloads.
+(TRM) Guidelines. It is not a certification document, but a clear demonstration of how the project
+aligns with MAS‑style expectations for secure, well‑governed cloud workloads.
 
 ---
 

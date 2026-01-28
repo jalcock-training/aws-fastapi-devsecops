@@ -1,7 +1,7 @@
 # Root Account Setup
 
-This document outlines the initial security hardening applied to the AWS root account.  
-The root user is not used for day‑to‑day operations and exists only for break‑glass scenarios.
+This document outlines the initial security hardening applied to the AWS root account. The root user
+is not used for day‑to‑day operations and exists only for break‑glass scenarios.
 
 ## Actions Completed
 

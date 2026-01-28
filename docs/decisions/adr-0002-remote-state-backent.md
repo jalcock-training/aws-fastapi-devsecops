@@ -10,8 +10,7 @@ Accepted
 
 ## Context
 
-Terraform requires a backend to store state, manage concurrency, and ensure consistent
-deployments.  
+Terraform requires a backend to store state, manage concurrency, and ensure consistent deployments.
 Local state is not suitable for a collaborative or automated environment because it:
 
 - cannot be shared between users or CI/CD pipelines

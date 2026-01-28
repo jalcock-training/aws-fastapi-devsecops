@@ -1,8 +1,7 @@
 # ECS Architecture
 
 The FastAPI service is deployed on Amazon ECS using Fargate, providing a fully managed, serverless
-container runtime.  
-This architecture balances simplicity, security, and operational clarity.
+container runtime. This architecture balances simplicity, security, and operational clarity.
 
 ---
 
@@ -10,8 +9,7 @@ This architecture balances simplicity, security, and operational clarity.
 
 ### 1. ECS Cluster
 
-A logical grouping of Fargate tasks.  
-No EC2 instances are managed directly.
+A logical grouping of Fargate tasks. No EC2 instances are managed directly.
 
 ### 2. Task Definition
 
@@ -64,8 +62,7 @@ Allows ECS to:
 
 ### Task Role
 
-Grants the application only the permissions it needs.  
-Initially minimal, expanded only if required.
+Grants the application only the permissions it needs. Initially minimal, expanded only if required.
 
 ---
 

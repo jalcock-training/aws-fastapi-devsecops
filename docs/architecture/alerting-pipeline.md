@@ -1,8 +1,7 @@
 # Alerting Pipeline Architecture
 
 The alerting pipeline provides visibility into operational issues, security events, and cost
-anomalies across the AWS environment.  
-It is designed to be simple, reliable, and fully automated.
+anomalies across the AWS environment. It is designed to be simple, reliable, and fully automated.
 
 ---
 

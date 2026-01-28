@@ -20,9 +20,8 @@ This project requires a Terraform structure that supports:
 - future expansion to multiple environments
 
 Terraform supports several organisational patterns, ranging from monolithic roots to
-Terragrunt‑based multi‑account structures.  
-For this project, the structure must remain simple while still reflecting industry standard platform
-engineering practices.
+Terragrunt‑based multi‑account structures. For this project, the structure must remain simple while
+still reflecting industry standard platform engineering practices.
 
 ---
 
@@ -41,8 +40,8 @@ versions.tf ├── variables.tf └── outputs.tf
 
 ## Why We Start With Only a `dev` Environment
 
-This project follows a **platform‑first** approach.  
-Before introducing multiple environments, the following must be stable:
+This project follows a **platform‑first** approach. Before introducing multiple environments, the
+following must be stable:
 
 - Terraform backend
 - Modules
@@ -87,8 +86,8 @@ This ensures **state isolation** and **environment independence**.
 
 ## Why Terraform Is _Not_ Run From the Root Directory
 
-The root directory is **not** an executable Terraform project.  
-It acts as a **module** that environment directories call.
+The root directory is **not** an executable Terraform project. It acts as a **module** that
+environment directories call.
 
 Running Terraform from the root would:
 

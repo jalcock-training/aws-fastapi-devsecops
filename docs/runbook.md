@@ -8,14 +8,10 @@ day‑to‑day operations.
 
 ## 1. Overview
 
-**Service:** FastAPI application  
-**Platform:** AWS ECS Fargate  
-**Deployment:** GitHub Actions  
-**Infrastructure:** Terraform  
-**Networking:** ALB → ECS Service → Task  
-**Container Registry:** Amazon ECR  
-**Logging:** CloudWatch Logs  
-**Monitoring:** CloudWatch Metrics, ALB Target Health, EventBridge Alerts
+**Service:** FastAPI application **Platform:** AWS ECS Fargate **Deployment:** GitHub Actions
+**Infrastructure:** Terraform **Networking:** ALB → ECS Service → Task **Container Registry:**
+Amazon ECR **Logging:** CloudWatch Logs **Monitoring:** CloudWatch Metrics, ALB Target Health,
+EventBridge Alerts
 
 Core components involved during incidents:
 

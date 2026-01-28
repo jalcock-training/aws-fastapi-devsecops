@@ -126,8 +126,7 @@ Run:
 aws sts get-caller-identity
 ```
 
-You should see your account ID and IAM identity.  
-If not, fix your credentials before continuing.
+You should see your account ID and IAM identity. If not, fix your credentials before continuing.
 
 ---
 

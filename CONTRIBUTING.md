@@ -1,8 +1,8 @@
 # Contributing Guide
 
-Thank you for your interest in contributing to this AWS FastAPI DevSecOps reference project.  
-This repository is designed to be clear, reproducible, and technically rigorous. The guidelines
-below help maintain consistency and quality across code, infrastructure, and documentation.
+Thank you for your interest in contributing to this AWS FastAPI DevSecOps reference project. This
+repository is designed to be clear, reproducible, and technically rigorous. The guidelines below
+help maintain consistency and quality across code, infrastructure, and documentation.
 
 ---
 
@@ -10,17 +10,14 @@ below help maintain consistency and quality across code, infrastructure, and doc
 
 Contributions should follow these principles:
 
-- **Clarity over cleverness**  
-  Code and infrastructure should be easy to understand and maintain.
+- **Clarity over cleverness** Code and infrastructure should be easy to understand and maintain.
 
-- **Security by default**  
-  No hard‑coded secrets, no long‑lived credentials, and least‑privilege IAM.
+- **Security by default** No hard‑coded secrets, no long‑lived credentials, and least‑privilege IAM.
 
-- **Reproducibility**  
-  Everything should be deployable from scratch using Terraform and GitHub Actions.
+- **Reproducibility** Everything should be deployable from scratch using Terraform and GitHub
+  Actions.
 
-- **Consistency**  
-  Follow the existing patterns for structure, naming, and documentation.
+- **Consistency** Follow the existing patterns for structure, naming, and documentation.
 
 ---
 
