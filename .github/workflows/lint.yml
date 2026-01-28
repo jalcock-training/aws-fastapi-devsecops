@@ -18,10 +18,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # -------------------------
+      # Python + pip cache
+      # -------------------------
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.14"
+          cache: "pip"
 
       - name: Install Python linting tools
         run: |
@@ -33,18 +37,21 @@ jobs:
       - name: Run Black formatting check
         run: black --check .
 
-      # Optional: Markdown + Prettier linting
-      - name: Set up Node for markdown linting
+      # -------------------------
+      # Node + npm cache
+      # -------------------------
+      - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
+          cache: "npm"
 
       - name: Install markdownlint and prettier
         run: |
-          npm install -g markdownlint-cli prettier
+          npm install markdownlint-cli prettier
 
       - name: Run markdownlint
-        run: markdownlint "**/*.md"
+        run: npx markdownlint "**/*.md"
 
       - name: Run Prettier formatting check
-        run: prettier --check "**/*.{md,yml,yaml,json}"
+        run: npx prettier --check "**/*.{md,yml,yaml,json}"
