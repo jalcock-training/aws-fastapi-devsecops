@@ -10,8 +10,8 @@ Accepted
 
 ## Context
 
-This project requires a secure, scalable, and modern authentication mechanism for accessing AWS.  
-The identity source must support:
+This project requires a secure, scalable, and modern authentication mechanism for accessing AWS. The
+identity source must support:
 
 - Short‑lived credentials
 - Strong MFA enforcement
@@ -35,8 +35,8 @@ This project is intentionally self‑contained and does not rely on external ide
 all human access to AWS.**
 
 A single administrative user is created in the identity store and assigned the `AdministratorAccess`
-permission set.  
-All future operational access will be granted through SSO permission sets rather than IAM users.
+permission set. All future operational access will be granted through SSO permission sets rather
+than IAM users.
 
 ## Rationale
 

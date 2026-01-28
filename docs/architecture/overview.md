@@ -20,8 +20,7 @@ is intentionally minimal but reflects real‑world platform engineering practice
 
 ### 1. FastAPI Microservice
 
-A lightweight Python application packaged as a container image.  
-It exposes two endpoints:
+A lightweight Python application packaged as a container image. It exposes two endpoints:
 
 - `/health` — service health check
 - `/process` — simple JSON transformation endpoint
@@ -125,5 +124,5 @@ These are optional but demonstrate how the architecture can evolve.
 
 ---
 
-This overview provides the conceptual map for the project.  
-Detailed components are documented in the corresponding architecture pages.
+This overview provides the conceptual map for the project. Detailed components are documented in the
+corresponding architecture pages.

@@ -1,7 +1,7 @@
 # Terraform Authentication
 
-Terraform authenticates to AWS using IAM Identity Center (SSO).  
-This avoids long‑lived credentials and ensures all access is traceable.
+Terraform authenticates to AWS using IAM Identity Center (SSO). This avoids long‑lived credentials
+and ensures all access is traceable.
 
 ## Workflow
 

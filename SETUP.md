@@ -122,8 +122,7 @@ To shut down expensive components:
 terraform apply -var="enable_compute=false"
 ```
 
-This reduces monthly cost from ~$70 to ~$0–5 when idle.  
-See ADR‑0008 for full details.
+This reduces monthly cost from ~$70 to ~$0–5 when idle. See ADR‑0008 for full details.
 
 ---
 
@@ -153,14 +152,11 @@ Use this only when you no longer need the environment.
 
 ## 10. Troubleshooting
 
-- **ECS tasks not starting**  
-  Check CloudWatch Logs for task startup errors.
+- **ECS tasks not starting** Check CloudWatch Logs for task startup errors.
 
-- **CI/CD deployment fails**  
-  Ensure the GitHub OIDC role trust policy matches your repository.
+- **CI/CD deployment fails** Ensure the GitHub OIDC role trust policy matches your repository.
 
-- **High AWS costs**  
-  Confirm the environment is toggled off when not in use.
+- **High AWS costs** Confirm the environment is toggled off when not in use.
 
 ---
 

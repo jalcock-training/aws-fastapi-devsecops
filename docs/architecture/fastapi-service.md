@@ -1,8 +1,7 @@
 # FastAPI Service Architecture
 
-The FastAPI microservice is the core application workload deployed on the AWS platform.  
-It is intentionally lightweight to keep the focus on DevSecOps, infrastructure, and security
-practices.
+The FastAPI microservice is the core application workload deployed on the AWS platform. It is
+intentionally lightweight to keep the focus on DevSecOps, infrastructure, and security practices.
 
 ---
 

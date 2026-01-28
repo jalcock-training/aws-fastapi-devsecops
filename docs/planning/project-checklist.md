@@ -21,8 +21,8 @@
 - [x] Architecture section scaffolded
 - [x] ADR directory created
 - [x] Project planning directory created
-- [ ] Runbook created (deploy, rollback, debug)
-- [ ] Cost breakdown documented (ECS, ALB, NAT, logs)
+- [x] Runbook created (deploy, rollback, debug)
+- [x] Cost breakdown documented (ECS, ALB, NAT, logs)
 
 ---
 
@@ -37,7 +37,7 @@
 - [x] SAST scanning (Bandit)
 - [x] Container scanning (Trivy)
 - [x] IaC scanning (Checkov)
-- [ ] CI caching added (pip + Docker layers)
+- [x] CI caching added (pip + Docker layers)
 - [ ] Pre-commit hooks configured
 - [ ] Branch protection rules defined
 - [ ] Local Git hooks added (pre-commit, pre-push) for linting, formatting, and safety checks

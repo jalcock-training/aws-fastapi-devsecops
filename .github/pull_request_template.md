@@ -1,11 +1,13 @@
-# Description
+# Pull Request
+
+## Description
 
 Provide a clear and concise description of the change. Explain the purpose of the PR and the problem
 it solves.
 
 ---
 
-# Type of Change
+## Type of Change
 
 Select one:
 
@@ -18,19 +20,19 @@ Select one:
 
 ---
 
-# Related Issues checklist section
+## Related Issues checklist section
 
-Closes #<issue-number>
+Closes #
 
 ---
 
-# Implementation Notes
+## Implementation Notes
 
 Add any relevant details about the approach, decisions made, or trade-offs.
 
 ---
 
-# Testing
+## Testing
 
 Describe how you tested the change:
 
@@ -41,7 +43,7 @@ Describe how you tested the change:
 
 ---
 
-# Checklist
+## Checklist
 
 - [ ] My code follows the project’s style and conventions
 - [ ] I have added or updated documentation as needed

@@ -81,16 +81,14 @@ See ADR‑0001 for a full breakdown.
 
 ## Status
 
-Active development phase.  
-Core infrastructure, documentation, and the initial FastAPI service are in place. CI/CD, security
-scanning, and deployment workflows are being refined as the project evolves.
+Active development phase. Core infrastructure, documentation, and the initial FastAPI service are in
+place. CI/CD, security scanning, and deployment workflows are being refined as the project evolves.
 
 ---
 
 ## Documentation
 
-All architectural decisions are captured as ADRs in `docs/decisions/`.  
-Start with:
+All architectural decisions are captured as ADRs in `docs/decisions/`. Start with:
 
 - ADR‑0001 — Repository Structure
 - ADR‑0004 — Infrastructure Platform
