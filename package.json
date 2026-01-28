@@ -24,5 +24,8 @@
     "markdownlint-cli": "^0.47.0",
     "markdownlint-cli2": "^0.20.0",
     "prettier": "^3.8.1"
+  },
+  "dependencies": {
+    "markdownlint": "^0.40.0"
   }
 }
