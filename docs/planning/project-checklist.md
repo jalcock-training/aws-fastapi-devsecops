@@ -47,7 +47,7 @@
 - [x] Docker image built from FastAPI app
 - [x] Push to ECR (real image)
 - [x] Terraform plan/apply workflow scaffolded
-- [ ] Deployment workflow scaffolded (ECS)
+- [x] Deployment workflow scaffolded (ECS)
 
 ---
 

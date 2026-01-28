@@ -2,10 +2,7 @@ name: Dependency Scan
 
 on:
   pull_request:
-    paths:
-      - "app/requirements.txt"
-      - "app/**/*.py"
-      - ".github/workflows/dependency-scan.yml"
+
   push:
     branches:
       - main
