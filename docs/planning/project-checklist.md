@@ -39,8 +39,8 @@
 ### Build & Deploy Pipeline
 
 - [x] Docker build workflow (placeholder image)
-- [ ] Push to ECR (placeholder)
-- [ ] Terraform plan/apply workflow scaffolded
+- [x] Push to ECR (placeholder)
+- [x] Terraform plan/apply workflow scaffolded
 
 ---
 
@@ -49,7 +49,7 @@
 - [ ] CI pipeline updated to run real tests
 - [ ] Security scanning runs on real code
 - [ ] Docker image built from FastAPI app
-- [ ] Image pushed to ECR
+- [x] Image pushed to ECR
 - [ ] ECS service updated to use real image
 - [ ] Deployment workflow finalised
 
