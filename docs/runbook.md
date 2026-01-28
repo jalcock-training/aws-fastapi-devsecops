@@ -53,22 +53,22 @@ Use only if GitHub Actions is unavailable.
 
 1. Build image locally:
 
-```bash 
-docker build -t <repo>:manual .
-```
+   ```bash
+   docker build -t <repo>:manual .
+   ```
 
 2. Authenticate and push:
 
-```bash
-aws ecr get-login-password --region <region> | docker login --username AWS --password-stdin <account>.dkr.ecr.<region>.amazonaws.com
-docker push <repo>:manual
-```
+   ```bash
+   aws ecr get-login-password --region <region> | docker login --username AWS --password-stdin <account>.dkr.ecr.<region>.amazonaws.com
+   docker push <repo>:manual
+   ```
 
 3. Update ECS task definition:
-- Create new revision with updated image
-- Update ECS service to use new revision
-- Force new deployment
-
+   - Create new revision with updated image
+   - Update ECS service to use new revision
+   - Force new deployment
+  
 4. Validate health checks and logs.
 
 ---
@@ -81,6 +81,7 @@ docker push <repo>:manual
 2. Select the previous task definition revision.
 3. Trigger workflow.
 4. Validate:
+
 - ECS service stabilises
 - ALB target health returns to `healthy`
 - Application responds on `/health`
@@ -89,23 +90,24 @@ docker push <repo>:manual
 
 1. Identify previous task definition revision:
 
-```bash
-aws ecs list-task-definitions --family-prefix <service>
-```
+   ```bash
+   aws ecs list-task-definitions --family-prefix <service>
+   ```
 
 2. Update service to use previous revision:
 
-```bash
-aws ecs update-service \
---cluster <cluster> \
---service <service> \
---task-definition <revision>
-```
+   ```bash
+   aws ecs update-service \
+   --cluster <cluster> \
+   --service <service> \
+   --task-definition <revision>
+   ```
 
 3. Force new deployment if needed:
-```bash
-aws ecs update-service --force-new-deployment ...
-```
+
+   ```bash
+   aws ecs update-service --force-new-deployment ...
+   ```
 
 4. Validate logs and ALB health.
 
@@ -113,11 +115,13 @@ aws ecs update-service --force-new-deployment ...
 
 1. Revert the commit containing the breaking change.
 2. Run:
-```bash
-terraform init
-terraform plan
-terraform apply
-```
+
+   ```bash
+   terraform init
+   terraform plan
+   terraform apply
+   ```
+
 3. Validate affected resources.
 
 ---
@@ -127,42 +131,50 @@ terraform apply
 ### 4.1 Application-Level Debugging
 
 Check ECS task logs:
+
 ```bash
 aws logs tail /aws/ecs/<service> --follow
 ```
 
 Check ALB access logs (if enabled):
+
 - S3 bucket: `alb-logs-<account>-<region>/AWSLogs/...`
 
 Validate endpoints:
+
 - `/health`
 - `/process`
 
 ### 4.2 ECS Debugging
 
-**Task stuck in PENDING**
+Task stuck in PENDING
+
 - Subnet or security group misconfiguration
 - Missing IAM permissions
 - No available capacity
 
-**Task running but unhealthy**
+Task running but unhealthy
+
 - App not listening on correct port
 - Health check path incorrect
 - Startup time too slow
 
-**ALB returning 502/503**
+ALB returning 502/503
+
 - Target group health checks failing
 - Container crash loop
 - Wrong container port mapping
 
 ### 4.3 Terraform Debugging
 
-**terraform apply fails**
+Terraform apply fails
+
 - Missing IAM permissions
 - Provider version mismatch
 - Backend misconfiguration
 
-**State drift**
+State drift
+
 - Manual AWS console changes
 - Out-of-band resource updates
 
@@ -171,15 +183,18 @@ Validate endpoints:
 ## 5. Observability & Monitoring
 
 ### 5.1 CloudWatch Logs
+
 - ECS task logs: `/aws/ecs/<service>`
 - ALB access logs (if enabled)
 
 ### 5.2 CloudWatch Metrics
+
 - ECS CPU / Memory
 - ALB 4xx / 5xx
 - Target group health
 
 ### 5.3 Alerts
+
 - EventBridge rules for ECS failures
 - SNS notifications for critical events
 - Billing alarms (Terraform-managed)
@@ -189,15 +204,18 @@ Validate endpoints:
 ## 6. Access & Credentials
 
 ### 6.1 AWS Access
+
 - Use AWS SSO login
 - No long-lived IAM keys
 - GitHub Actions uses OIDC role
 
 ### 6.2 Terraform Access
+
 - Backend: S3 + DynamoDB
 - Requires SSO session or OIDC (CI)
 
 ### 6.3 Local Development
+
 - `.env` file for local FastAPI
 - Docker for local builds
 
@@ -205,18 +223,21 @@ Validate endpoints:
 
 ## 7. Contact & Escalation
 
-**Service Owner:**  
-James (Platform Engineer)
+### Service Owner
 
-**Incident Logging:**  
+James Alcock (Platform Engineer)
+
+### Incident Logging
+
 `docs/incidents/` directory or external tracker
 
-**Escalation Path:**  
-- Review CloudWatch logs  
-- Review ECS events  
-- Review GitHub Actions logs  
-- Roll back if needed  
-- Document incident  
+### Escalation Path
+
+- Review CloudWatch logs
+- Review ECS events
+- Review GitHub Actions logs
+- Roll back if needed
+- Document incident
 
 ---
 
@@ -247,11 +268,13 @@ Force new deployment:
 ```bash
 aws ecs update-service --cluster <cluster> --service <service> --force-new-deployment
 ```
+
 ---
 
 ### 8.2 Health Check Reference
 
 Default ALB health check:
+
 - Path: `/health`
 - Port: `traffic-port`
 - Interval: 30s
