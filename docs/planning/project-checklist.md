@@ -38,16 +38,16 @@
 - [x] Container scanning (Trivy)
 - [x] IaC scanning (Checkov)
 - [x] CI caching added (pip + Docker layers)
-- [ ] Pre-commit hooks configured
-- [ ] Branch protection rules defined
-- [ ] Local Git hooks added (pre-commit, pre-push) for linting, formatting, and safety checks
+- [x] Pre-commit hooks configured
+- [x] Branch protection rules defined
+- [x] Local Git hooks added (pre-commit, pre-push) for linting, formatting, and safety checks
 
 ### 3.2 Build & Deploy Pipeline
 
 - [x] Docker image built from FastAPI app
 - [x] Push to ECR (real image)
 - [x] Terraform plan/apply workflow scaffolded
-- [ ] Deployment workflow scaffolded (ECS)
+- [x] Deployment workflow scaffolded (ECS)
 
 ---
 

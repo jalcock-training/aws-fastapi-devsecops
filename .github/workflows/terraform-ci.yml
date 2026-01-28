@@ -2,9 +2,7 @@ name: Terraform CI
 
 on:
   pull_request:
-    paths:
-      - "terraform/**"
-      - ".github/workflows/terraform-ci.yml"
+
   push:
     branches:
       - main

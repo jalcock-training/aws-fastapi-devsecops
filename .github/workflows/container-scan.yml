@@ -2,10 +2,7 @@ name: Container Scan
 
 on:
   pull_request:
-    paths:
-      - "Dockerfile"
-      - "app/**"
-      - ".github/workflows/container-scan.yml"
+
   push:
     branches:
       - main
