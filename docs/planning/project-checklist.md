@@ -42,7 +42,6 @@
 - [ ] Branch protection rules defined
 - [ ] Local Git hooks added (pre-commit, pre-push) for linting, formatting, and safety checks
 
-
 ### 3.2 Build & Deploy Pipeline
 
 - [x] Docker image built from FastAPI app
